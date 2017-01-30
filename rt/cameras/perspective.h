@@ -5,17 +5,26 @@
 #include <core/vector.h>
 #include <core/point.h>
 
+#include <rt\ray.h>
+
 namespace rt {
 
 class PerspectiveCamera : public Camera {
+
+private:
+	Point center;
+	Vector forward;
+	Vector spanX, spanY; 
+
+
 public:
-    PerspectiveCamera(
-        const Point& center,
-        const Vector& forward,
-        const Vector& up,
-        float verticalOpeningAngle,
-        float horizonalOpeningAngle
-        );
+	PerspectiveCamera(
+		const Point& center,
+		const Vector& forward,
+		const Vector& up,
+		float verticalOpeningAngle,
+		float horizonalOpeningAngle
+	);
 
     virtual Ray getPrimaryRay(float x, float y) const;
 };

@@ -1,2 +1,0 @@
-# CGSkeleton
-cg project

@@ -5,9 +5,18 @@
 #include <core/vector.h>
 #include <core/point.h>
 
+#include <rt\ray.h>
+
 namespace rt {
 
 class OrthographicCamera : public Camera {
+
+private:
+	Point center;
+	Vector forward, up;
+	Vector dir;
+	Vector spanX, spanY;
+
 public:
     OrthographicCamera(
         const Point& center,

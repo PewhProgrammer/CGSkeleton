@@ -3,17 +3,24 @@
 
 #include <core/macros.h>
 
+#include <core/point.h>
+#include <core/assert.h>
+#include <core/scalar.h>
+
 namespace rt {
 
 class Float4;
 class Point;
 class ALIGN(16) Vector {
+private:
+	float v[3];
 public:
     float x, y, z;
 
     Vector() {}
-    Vector(float x, float y, float z) : x(x), y(y), z(z) {}
+	Vector(float x, float y, float z);
     explicit Vector(const Float4& f4);
+	float operator[](int idx) const;
 
     static Vector rep(float v) { return Vector(v,v,v); }
 

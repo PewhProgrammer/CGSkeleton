@@ -2,6 +2,7 @@
 #define CG1RAYTRACER_RGBCOLOR_HEADER
 
 #include <core/macros.h>
+#include <core\assert.h>
 
 namespace rt {
 
